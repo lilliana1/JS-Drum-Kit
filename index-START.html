@@ -60,7 +60,18 @@
 <script>
   // Here we will listen when the key is press, as soon as is press, it will execute the function
 window.addEventListener('keydown', function (e) {
-  console.log(e);
+  // this will log us the key ex. A = 65 
+  console.log(e.keyCode);
+  // if the pressed key has an audio, play it; is querySelector and not querySelectorAll because we are only looking for one
+  // we will use ES6 to get the audio of the data-key selected
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+  console.log(audio);
+  // audio will play if the key has audio
+  audio.play();
+  // if the press key has no audio, function will stop from running all together
+  if(!audio) return;
+  
+
   
 })
 </script>
